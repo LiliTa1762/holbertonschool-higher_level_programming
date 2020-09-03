@@ -3,11 +3,11 @@ if __name__ == "__main__":
     from sys import argv
 # Argv is 0 (whithout the name of the file)
 if (len(argv) == 1):
-    print((len(argv) - 1), "arguments.")
+    print("{} arguments. ".format(len(argv) - 1))
 # Argv is 1
 elif (len(argv) == 2):
-    print((len(argv) - 1), "argument: ")
+    print("{} argument: ".format(len(argv) - 1))
 else:
-    print((len(argv) - 1), "arguments: ")
+    print("{} arguments: ".format(len(argv) - 1))
 for i in range(1, len(argv)):
     print("{}: {}".format(i, argv[i]))
