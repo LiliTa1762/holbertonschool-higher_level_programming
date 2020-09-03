@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import sys
+    from sys import argv
 # Argv is 0 (whithout the name of the file)
-argv = sys.argv
 if (len(argv) == 1):
     print((len(argv) - 1), "arguments.")
 # Argv is 1
