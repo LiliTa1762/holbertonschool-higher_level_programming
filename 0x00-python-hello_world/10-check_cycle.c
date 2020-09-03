@@ -8,8 +8,8 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *hare;
-	listint_t *tort;
+	listint_t *hare = NULL;
+	listint_t *tort = NULL;
 
 	if (list == NULL || list->next == NULL)
 		return (0);
@@ -22,7 +22,7 @@ int check_cycle(listint_t *list)
 		if (hare == tort)
 			return (1);
 
-		if (hare->next->next == NULL)
+		if (hare->next == NULL)
 			return (0);
 
 		hare = hare->next->next;
