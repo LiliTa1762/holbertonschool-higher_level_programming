@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
-    while True:
         try:
-            if value(x) is int:
-                return (True)
-        except:
+            print("{:d}".format(value))
+        except ValueError:
             return (False)
+        except TypeError:
+            return (False)
+        return (True)
