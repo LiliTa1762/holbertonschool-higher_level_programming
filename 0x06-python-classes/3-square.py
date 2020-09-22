@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-define a private instance attribute
-that would be: area
+Define a private instance attribute
+That would be: area
 """
 
 
 class Square:
     def __init__(self, size=0):
-
+    """Define a private att"""
         if type(size) is not int:
             raise TypeError("size must be an integer")
         if size < 0:
