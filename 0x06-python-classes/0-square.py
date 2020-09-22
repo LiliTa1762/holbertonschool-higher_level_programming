@@ -3,5 +3,5 @@
 
 
 class Square:
-    """Define an empty class""" 
+    """Define an empty class"""
     pass
