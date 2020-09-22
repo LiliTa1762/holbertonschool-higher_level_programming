@@ -3,3 +3,4 @@
 
 
 class Square:
+    pass
