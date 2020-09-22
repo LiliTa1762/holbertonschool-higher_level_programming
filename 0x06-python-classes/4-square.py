@@ -6,8 +6,8 @@ That would be: size
 
 
 class Square:
-    """Define a private att"""
     def __init__(self, size=0):
+        """Define a private att"""
         if type(size) is not int:
             raise TypeError("size must be an integer")
         if size < 0:
@@ -15,19 +15,20 @@ class Square:
 
         self.__size = size
 
-    """Access and uptade private attribute"""
     @property
     def size(self):
+        """Access and uptade private attribute"""
         return(self.__size)
 
-    """Access and uptade private attribute"""
     @size.setter
     def size(self, value):
+        """Access and uptade private attribute"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
+        self.__size = value
 
-    """Define public instance method"""
     def area(self):
+        """Define public instance method"""
         return(self.__size ** 2)
