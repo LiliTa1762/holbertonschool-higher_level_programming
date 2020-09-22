@@ -6,6 +6,7 @@ That would be: size
 
 
 class Square:
+    """Define a private att"""
     def __init__(self, size=0):
         """Define a private att"""
         if type(size) is not int:
