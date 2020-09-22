@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """
-define a private instance attibute size
+Define a private instance attibute size
 size must be an int and greater than zero
 """
 
 
 class Square:
+    "Define a private instance att"
     def __init__(self, size=0):
 
         if type(size) is not int:
