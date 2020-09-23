@@ -35,8 +35,6 @@ class Square:
 
     def my_print(self):
         """Define public instance method"""
-        i = 0
-        j = 0
         if self.__size == 0:
             print(" ")
         for i in range(self.__size):
