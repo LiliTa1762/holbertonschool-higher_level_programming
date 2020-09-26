@@ -1,0 +1,49 @@
+0. Integers addition module
+===========================
+Function
+========.
+Function that adds two integers.
+
+Operantions
+===========
+a and b must be int or floats,otherwise raise a TypeError exception with the
+message a must be an integer or b must be an integer:
+
+Import module:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Uses:
+
+Should return the sum of two int:
+    >>> add_integer(1, 2)
+    3
+
+Should return the sum of two int:
+    >>> add_integer(1, -2)
+    -1
+
+Should return the sum of two int:
+    >>> add_integer(-1, -2)
+    -3
+
+Should return an integer from the sum of a = float, b = integer:
+    >>> add_integer(100.0, 2)
+    102
+
+Should return an error:
+    >>> add_integer(None, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Should return an error:
+    >>> add_integer(2, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+Should return an error:
+    >>> add_integer(2, "Holberton")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
