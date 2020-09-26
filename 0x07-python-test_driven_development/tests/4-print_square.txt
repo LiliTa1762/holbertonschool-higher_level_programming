@@ -1,0 +1,54 @@
+4. Function that prints a square with the char #
+===========================
+Function
+========.
+Function that prints a square.
+
+Operantions
+===========
+size must be an integer, otherwise raise a TypeError exception with the
+message size must be an integer:
+
+size must be greater than 0, otherwise raise ValueError excepetion with the
+message: size must be >= 0 and a TypeError excepcion with the message:
+size must be an integer:
+
+Import module:
+    >>> print_square = __import__('4-print_square').print_square
+
+Uses:
+
+Should return a square:
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+Should return nothing:
+    >>> print_square(0)
+     
+
+Should return an error:
+    >>> print_square("a")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Should return an error:
+    >>> print_square(-3)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+Should return an error:
+    >>> print_square(-2.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Should return an error:
+    >>> print_square(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
