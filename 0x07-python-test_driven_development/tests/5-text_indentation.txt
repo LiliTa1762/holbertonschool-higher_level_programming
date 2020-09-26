@@ -1,0 +1,50 @@
+5. Indentantion of text
+=======================
+Function
+========
+function that prints a text with 2 new lines after each of these
+characters: ., ? and :
+
+Operations
+==========
+text must be a string, otherwise raise a TypeError exception with the
+message text must be a string:
+
+Import module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Uses:
+
+Should return a text:
+    >>> text_indentation("Hello")
+    Hello
+
+Should return a text with 2 new lines after . char:
+    >>> text_indentation("Hello. World")
+    Hello.
+    <BLANKLINE>
+    World
+
+Should return a text with 2 new lines after ? char:
+    >>> text_indentation("Hello? World")
+    Hello?
+    <BLANKLINE>
+    World
+
+Should return a text with 2 new lines after : char:
+    >>> text_indentation("Hello: World")
+    Hello:
+    <BLANKLINE>
+    World
+
+Should return an error:
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Should return an error:
+    >>> text_indentation(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
