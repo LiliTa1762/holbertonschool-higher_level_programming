@@ -1,11 +1,9 @@
-0. Integers addition module
-===========================
-Function
-========.
-Function that adds two integers.
+0. The ``Integers addition`` module
+===================================
 
-Operantions
-===========
+Using ``integer addition``
+--------------------------
+
 a and b must be int or floats,otherwise raise a TypeError exception with the
 message a must be an integer or b must be an integer:
 
