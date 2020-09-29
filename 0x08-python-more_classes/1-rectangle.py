@@ -5,6 +5,7 @@
 class Rectangle:
     """Class with private instance att"""
     def __init__(self, width=0, height=0):
+        """Instantiation object"""
         self.__width = width
         self.__height = height
 
