@@ -6,8 +6,8 @@ class Rectangle:
     """Class Rectangle"""
     def __init__(self, width=0, height=0):
         """Instantiation object"""
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
@@ -51,7 +51,7 @@ class Rectangle:
     def __str__(self):
         """Prints the rectangle with a char"""
         string = ""
-        if self.__width != 0 or self.__height != 0:
+        if self.__width != 0 and self.__height != 0:
             string += "\n".join("#" * self.__width
                                 for j in range(self.__height))
         return string
