@@ -24,13 +24,13 @@ class Rectangle:
             return rect_1
         return rect_2
 
-    def _init_(self, width=0, height=0):
+    def __init__(self, width=0, height=0):
         """Initializes the rectangle"""
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
 
-    def _del_(self):
+    def __del__(self):
         """Prints a string when an instance has been deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
@@ -64,23 +64,23 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """returns the area of the rectangle"""
-        return self._width * self._height
+        """Returns the area of the rectangle"""
+        return self.__width * self.__height
 
     def perimeter(self):
         """Returns the perimeter of the rectangle"""
-        if self._width == 0 or self._height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
-        return (self._width * 2) + (self._height * 2)
+        return 2 * (self.__height + self.__width)
 
     def _str_(self):
         """Returns printable string representation of the rectangle"""
         string = ""
-        if self._width != 0 and self._height != 0:
+        if self.__width != 0 and self.__height != 0:
             string += "\n".join(str(self.print_symbol) * self.__width
                                 for j in range(self.__height))
         return string
 
     def _repr_(self):
         """Returns a string representation of the rectangle for reproduction"""
-        return "Rectangle({:d}, {:d})".format(self._width, self._height)
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
