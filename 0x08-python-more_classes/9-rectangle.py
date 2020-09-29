@@ -25,11 +25,6 @@ class Rectangle:
         else:
             return rect_2
 
-    @classmethod
-    def square(cls, size=0):
-        """Returns a new Rectangle instance"""
-        return cls(size, size)
-
     def __init__(self, width=0, height=0):
         """Instantiation object"""
         self.__width = width
@@ -91,3 +86,8 @@ class Rectangle:
         """When an instance of the class is deleted"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @classmethod
+    def square(cls, size=0):
+        """Returns a new Rectangle instance"""
+        return cls(size, size)
