@@ -28,7 +28,7 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """Returns a new Rectangle instance"""
-        return cls(width == height == size)
+        return cls(size, size)
 
     def __init__(self, width=0, height=0):
         """Instantiation object"""
