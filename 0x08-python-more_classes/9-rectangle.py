@@ -78,14 +78,14 @@ class Rectangle:
     def __str__(self):
         """Prints the rectangle with a char"""
         string = ""
-        if self.__width != 0 or self.__height != 0:
+        if self.__width != 0 and self.__height != 0:
             string += "\n".join(str(self.print_symbol) * self.__width
                                 for j in range(self.__height))
         return string
 
     def __repr__(self):
         """To be able to recreate a new instance"""
-        return "Rectangle ({}, {})".format(self.__width, self.__height)
+        return "Rectangle ({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
         """When an instance of the class is deleted"""
