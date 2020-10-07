@@ -7,5 +7,5 @@ def number_of_lines(filename=""):
     with open(filename, "r", encoding="utf-8") as f:
         for i, l in enumerate(f):
             """"i for the count and l for run into function"""
-            var = i + 1
-        return var
+            i += 1
+        return i
