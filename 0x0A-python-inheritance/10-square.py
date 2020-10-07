@@ -37,9 +37,11 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
+        """Area method implemented for rectangle"""
         return self.__width * self.__height
 
     def __str__(self):
+        """str implemented"""
         return("[Rectangle] {:d}/{:d}".format(self.__width, self.__height))
 
 
@@ -53,7 +55,5 @@ class Square(Rectangle):
         super().__init__(size, size)
 
     def area(self):
+        """Area method implemented"""
         return self.__size * self.__size
-
-    def __str__(self):
-        return("[Rectangle] {:d}/{:d}".format(self.__size, self.__size))
