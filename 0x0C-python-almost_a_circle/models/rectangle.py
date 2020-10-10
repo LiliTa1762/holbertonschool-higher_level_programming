@@ -11,10 +11,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Private instace attributes and using the super"""
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -22,8 +22,12 @@ class Rectangle(Base):
         return(self.__width)
 
     @width.setter
-    def width(self):
+    def width(self, width):
         """Uptade private attribute"""
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
         self.__width = width
 
     @property
@@ -32,8 +36,12 @@ class Rectangle(Base):
         return(self.__height)
 
     @height.setter
-    def height(self):
+    def height(self, height):
         """Uptade private attribute"""
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = height
 
     @property
@@ -42,16 +50,24 @@ class Rectangle(Base):
         return(self.__x)
 
     @x.setter
-    def x(self):
+    def x(self, x):
         """Uptade private attribute"""
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
         self.__x = x
 
     @property
     def y(self):
         """Access a private attribute"""
-        self.__y = y
+        return (self.__y)
 
-    @height.setter
-    def y(self):
+    @y.setter
+    def y(self, y):
         """Uptade private attribute"""
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
         self.__y = y
