@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Rectangle class that inherits from Base
 """
@@ -94,7 +95,7 @@ class Rectangle(Base):
                 if arg == 0:
                     self.id = value
                 elif arg == 1:
-                    self.__width= value
+                    self.__width = value
                 elif arg == 2:
                     self.__height = value
                 elif arg == 3:
