@@ -113,4 +113,3 @@ class Rectangle(Base):
                     self.x = kwargs.get("x")
                 if key == "y":
                     self.y = kwargs.get("y")
-
