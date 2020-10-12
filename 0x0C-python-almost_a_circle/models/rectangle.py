@@ -107,10 +107,21 @@ class Rectangle(Base):
                 if key == "id":
                     self.id = kwargs.get("id")
                 if key == "width":
-                    self.width = kwargs.get("width")
+                    self.__width = kwargs.get("width")
                 if key == "height":
-                    self.height = kwargs.get("height")
+                    self.__height = kwargs.get("height")
                 if key == "x":
-                    self.x = kwargs.get("x")
+                    self.__x = kwargs.get("x")
                 if key == "y":
-                    self.y = kwargs.get("y")
+                    self.__y = kwargs.get("y")
+
+    def to_dictionary(self):
+        """Returns a dictionary representation"""
+        dict = {
+            "id": self.id,
+            "width": self.__width,
+            "height": self.__height,
+            "x": self.__x,
+            "y": self.__y
+            }
+        return(dict)
