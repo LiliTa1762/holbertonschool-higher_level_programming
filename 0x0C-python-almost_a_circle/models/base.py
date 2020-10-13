@@ -39,7 +39,7 @@ class Base:
     def from_json_string(json_string):
         """Returns the list of the JSON string rep"""
         if json_string is None:
-            return("[]")
+            return []
         else:
             return json.loads(json_string)
 
@@ -58,7 +58,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """Static method, returns the JSON representation"""
         if list_dictionaries is None:
-            return("[]")
+            return []
         else:
             return json.dumps(list_dictionaries)
 
