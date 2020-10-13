@@ -9,7 +9,7 @@ import io
 import os
 import pep8
 import json
-from models import square 
+from models import square
 from models.base import Base
 from contextlib import redirect_stdout
 
@@ -28,7 +28,7 @@ class TestSquareDocs(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/square.py'])
         self.assertEqual(result.total_errors, 0,
-                        "Found code style errors (and warnings).")
+                         "Found code style errors (and warnings).")
 
     def test_module_docstring(self):
         """Presence of a module docstring"""
@@ -187,13 +187,13 @@ class TestSquare(unittest.TestCase):
             self.s3.display()
             output = buf.getvalue()
             self.assertEqual(output, "\n" * 6 +
-                            (" " * 5 + "#" * 4 + "\n") * 4)
+                             (" " * 5 + "#" * 4 + "\n") * 4)
 
         with io.StringIO() as buf, redirect_stdout(buf):
             self.s4.display()
             output = buf.getvalue()
             self.assertEqual(output, "\n" * 9 +
-                            (" " * 8 + "#" * 7 + "\n") * 7)
+                             (" " * 8 + "#" * 7 + "\n") * 7)
 
     def test_u_update_args(self):
         """Testing the udpate method with *args"""

@@ -7,7 +7,7 @@ import unittest
 import inspect
 import pep8
 import json
-from models import base 
+from models import base
 
 
 Base = base.Base
@@ -40,13 +40,14 @@ class TestBaseDocs(unittest.TestCase):
         for function in self.base_funcs:
             self.assertTrue(len(function[1].__doc__) >= 1)
 
+
 class TestBase(unittest.TestCase):
     """Checking functionality of Base class"""
     def test_a_id_value(self):
         """Checking value of id"""
         obj = Base(5)
         self.assertEqual(obj.id, 5)
-    
+
     def test_b_id_value(self):
         """Checking id value"""
         obj = Base()

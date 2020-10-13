@@ -9,7 +9,7 @@ import io
 import os
 import pep8
 import json
-from models import rectangle 
+from models import rectangle
 from models.base import Base
 from contextlib import redirect_stdout
 
@@ -37,6 +37,7 @@ class TestRectangleDocs(unittest.TestCase):
     def test_class_docstring(self):
         """Rectangle class docstring test"""
         self.assertTrue(len(Rectangle.__doc__) >= 1)
+
 
 class TestRectangle(unittest.TestCase):
     """Checking functionality of Base class"""
