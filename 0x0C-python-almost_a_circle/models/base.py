@@ -11,13 +11,21 @@ class Base:
     """Representation of a base"""
     __nb_objects = 0
 
+    def __init__(self, id=None):
+        """Instantiation part"""
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+            
     @classmethod
     def load_from_file(cls):
         """A list of instances"""
         filename = cls.__name__ + ".json"
         lst = []
         try:
-            with open(filename, "r", enconding="utf-8") as f:
+            with open(filename, "r") as f:
                 lst = cls.from_json_string(f.read())
             for i, x in enumerate(lst):
                 lst[i] = cls.create(**lst[i])
@@ -62,10 +70,3 @@ class Base:
         else:
             return json.dumps(list_dictionaries)
 
-    def __init__(self, id=None):
-        """Instantiation part"""
-        if id is not None:
-            self.id = id
-        else:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
