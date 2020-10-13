@@ -58,9 +58,8 @@ class Base:
     def to_json_string(list_dictionaries):
         """Static method, returns the JSON representation"""
         if list_dictionaries is None:
-            list_dictionaries = []
-        else:
-            return json.dumps(list_dictionaries)
+            return ("[]")
+        return json.dumps(list_dictionaries)
 
     def __init__(self, id=None):
         """Instantiation part"""
