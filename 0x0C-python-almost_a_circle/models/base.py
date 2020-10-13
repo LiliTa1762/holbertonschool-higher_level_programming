@@ -59,7 +59,8 @@ class Base:
         """Static method, returns the JSON representation"""
         if list_dictionaries is None:
             return ("[]")
-        return json.dumps(list_dictionaries)
+        else:
+            return json.dumps(list_dictionaries)
 
     def __init__(self, id=None):
         """Instantiation part"""
