@@ -18,7 +18,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-            
+
     @classmethod
     def load_from_file(cls):
         """A list of instances"""
@@ -69,4 +69,3 @@ class Base:
             return ("[]")
         else:
             return json.dumps(list_dictionaries)
-
