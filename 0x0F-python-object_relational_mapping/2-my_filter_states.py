@@ -12,11 +12,14 @@ password = sys.argv[2]
 database = sys.argv[3]
 con = mdb.connect('localhost', user, password, database)
 
-with con:
-    cur = con.cursor()
-    cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY states.id".format(sys.argv[4]))
+if __name__ == "__main__":
+    with con:
+        cur = con.cursor()
+        cur.execute(
+            "SELECT * FROM states WHERE name='{}' ORDER BY id ASC".format
+            (sys.argv[4]))
 
-    rows = cur.fetchall()
+        rows = cur.fetchall()
 
-    for row in rows:
-        print(row)
+        for row in rows:
+            print(row)
