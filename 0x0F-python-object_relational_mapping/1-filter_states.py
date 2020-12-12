@@ -7,16 +7,16 @@ Filter the states
 import MySQLdb as mdb
 import sys
 
-user = sys.argv[1]
-password = sys.argv[2]
-database = sys.argv[3]
-con = mdb.connect('localhost', user, password, database)
 
 if __name__ == "__main__":
+    user = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    con = mdb.connect('localhost', user, password, database)
+
     with con:
         cur = con.cursor()
-        cur.execute(
-            "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id")
+        cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id")
 
         rows = cur.fetchall()
 
