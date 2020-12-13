@@ -10,15 +10,16 @@ from sqlalchemy.ext.declarative import declarative_base
 import sys
 
 
-engine = create_engine(
-    'mysql+mysqldb://{}:{}@localhost/{}'.
-    format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-Base.metadata.create_all(engine)
+if __name__ == "__main__":
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@localhost/{}'.
+        format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
 
-con = engine.connect()
+    con = engine.connect()
 
-rs = con.execute("SELECT * from states ORDER BY id ASC")
+    rs = con.execute("SELECT * from states ORDER BY id ASC")
 
-row = rs.fetchone()
-for row in rs:
-    print('{:d}: {:s}'.format(row[0], row[1]))
+    row = rs.fetchall()
+    for rows in row:
+        print('{:d}: {:s}'.format(rows[0], rows[1]))
