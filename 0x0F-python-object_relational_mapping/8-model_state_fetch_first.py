@@ -20,9 +20,8 @@ if __name__ == "__main__":
 
     rs = con.execute("SELECT * from states ORDER BY id ASC LIMIT 1")
 
-    row = rs.fetchall()
-    if rs:
-        for rows in row:
-            print('{:d}: {:s}'.format(rows[0], rows[1]))
-    else:
+    if rs is None:
         print("Nothing")
+    else:
+        for rows in rs:
+            print('{:d}: {:s}'.format(rows[0], rows[1]))
