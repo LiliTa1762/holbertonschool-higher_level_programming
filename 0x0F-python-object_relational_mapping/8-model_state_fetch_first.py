@@ -4,9 +4,8 @@
 
 
 from model_state import Base, State
-from sqlalchemy import Column, Integer, String
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 import sys
 
 
@@ -14,14 +13,16 @@ if __name__ == "__main__":
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'.
         format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
 
-    con = engine.connect()
+    Session = sessionmaker(bind=engine)
 
-    rs = con.execute("SELECT * from states ORDER BY id ASC LIMIT 1")
+    session = Session()
 
-    if rs is None:
-        print("Nothing")
+    rs = session.query(State).order_by(State.id).first()
+
+    if rs:
+        print("{}: {}".format(rs.id, rs.name))
     else:
-        for rows in rs:
-            print('{:d}: {:s}'.format(rows[0], rows[1]))
+        print("Nothing")
+    
+    session.close()
