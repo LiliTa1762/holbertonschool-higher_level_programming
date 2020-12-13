@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Adds a State object to the database 
+"""Adds a State object to the database
 """
 
 
