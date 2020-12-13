@@ -25,4 +25,4 @@ if __name__ == "__main__":
         for rows in row:
             print('{:d}: {:s}'.format(rows[0], rows[1]))
     else:
-        print()
+        print("Nothing")
