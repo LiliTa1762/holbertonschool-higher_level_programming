@@ -12,4 +12,4 @@ if __name__ == "__main__":
             sol = t.read()
             print(sol.decode('utf-8'))
     except urllib.error.HTTPError as e:
-        print("error code:{} ".format(e.code))
+        print("Error code: {}".format(e.code))
